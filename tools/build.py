@@ -185,7 +185,7 @@ def header(active):
 </header>
 <div class="menu" id="menu" aria-hidden="true">
   <div class="menu-grid">
-    <nav class="menu-main" aria-label="Spółki Soffel Group"><ol>{big}</ol></nav>
+    <nav class="menu-main" aria-label="Marki Soffel Group"><ol>{big}</ol></nav>
     <div class="menu-side">
       <div><p class="menu-h">Eksploruj</p><ul class="menu-links">{explore}</ul></div>
       <div><p class="menu-h">Kontakt</p><ul class="menu-contact"><li>{ph("e-mail")}</li><li>{ph("telefon")}</li><li class="muted">Costa del Sol · Marbella · Málaga</li></ul></div>
@@ -203,10 +203,10 @@ def footer():
     <div class="foot-top">
       <div>
         <a class="brand" href="index.html"><img src="img/s-green.webp" alt="" width="44" height="44"><span class="brand-t"><b>SOFFEL</b><i>GROUP</i></span></a>
-        <p class="about">Inwestycje, pośrednictwo, renowacje i sprzątanie nieruchomości na Costa del Sol — cztery spółki, jeden proces i jeden standard.</p>
+        <p class="about">Inwestycje, pośrednictwo, renowacje i sprzątanie nieruchomości na Costa del Sol — cztery obszary, jeden proces i jeden standard.</p>
         <p class="tagline">People | Property | Better Living</p>
       </div>
-      <div><h4>Spółki</h4><ul>{divs}</ul></div>
+      <div><h4>Marki</h4><ul>{divs}</ul></div>
       <div><h4>Firma</h4><ul><li><a href="o-nas.html">O nas</a></li><li><a href="o-nas.html#zespol">Zespół</a></li><li><a href="inwestycje.html#model">Model inwestycyjny</a></li><li><a href="#kontakt">Kontakt</a></li></ul></div>
       <div><h4>Kontakt</h4><ul><li>{ph("telefon")}</li><li>{ph("e-mail")}</li><li>{ph("adres biura")}</li><li>Costa del Sol, Hiszpania</li></ul></div>
     </div>
@@ -270,7 +270,7 @@ def siblings(current):
         for i, d in enumerate([x for x in DIVS if x["key"] != current]))
     return f'''<section class="sec-sm" style="border-top:1px solid var(--line)">
   <div class="wrap">
-    <div class="sec-head"><span class="eyebrow">Pozostałe spółki grupy</span></div>
+    <div class="sec-head"><span class="eyebrow">Pozostałe marki Soffel Group</span></div>
     <div class="siblings">{items}</div>
   </div>
 </section>'''
@@ -339,7 +339,7 @@ def build_index():
         <span class="ln"><span class="gold-text">premium</span></span>
         <span class="ln"><span class="gold-text">w Hiszpanii</span></span>
       </h1>
-      <p class="lead fade-up d1">Kupujemy, odnawiamy i sprzedajemy nieruchomości na Costa del Sol z zyskiem dla naszych inwestorów. Cały proces prowadzą cztery spółki Soffel Group — bez podwykonawców i bez przekazywania odpowiedzialności.</p>
+      <p class="lead fade-up d1">Kupujemy, odnawiamy i sprzedajemy nieruchomości na Costa del Sol z zyskiem dla naszych inwestorów. Cały proces prowadzą cztery marki Soffel Group — bez podwykonawców i bez przekazywania odpowiedzialności.</p>
       <div class="hero-cta fade-up d2">
         <a class="btn btn-primary" href="#kontakt" data-topic="inv">Porozmawiajmy o inwestycji {I["arrow"]}</a>
         <a class="btn btn-ghost" href="#model">Jak działa model flip</a>
@@ -356,7 +356,7 @@ def build_index():
     <div class="wrap">
       <div class="st"><strong>{ph("+XX M€")}</strong><span>Wartość projektów</span></div>
       <div class="st"><p class="locs">Marbella · Málaga · Estepona</p><span>Costa del Sol</span></div>
-      <div class="st"><strong><span data-count="4">4</span> spółki</strong><span>Jeden proces</span></div>
+      <div class="st"><strong><span data-count="4">4</span> obszary</strong><span>Jeden proces</span></div>
     </div>
   </div>
   <span class="scroll-cue">Przewiń</span>
@@ -367,8 +367,8 @@ def build_index():
 <section class="sec" id="spolki">
   <div class="wrap">
     <div class="sec-head split">
-      <div style="display:grid;gap:22px"><span class="eyebrow">Obszary działania</span><h2 class="h2 split-words">Cztery spółki.<br><span class="gold-text">Jeden standard.</span></h2></div>
-      <p class="lead rv">Soffel Group obejmuje cały cykl życia nieruchomości — od zakupu, przez renowację, sprzedaż i najem, po codzienną opiekę. Każdy etap prowadzi wyspecjalizowana spółka grupy, dzięki czemu inwestor ma jednego partnera i jedną odpowiedzialność.</p>
+      <div style="display:grid;gap:22px"><span class="eyebrow">Obszary działania</span><h2 class="h2 split-words">Cztery obszary.<br><span class="gold-text">Jeden standard.</span></h2></div>
+      <p class="lead rv">Soffel Group obejmuje cały cykl życia nieruchomości — od zakupu, przez renowację, sprzedaż i najem, po codzienną opiekę. Każdy etap prowadzi wyspecjalizowana marka grupy, dzięki czemu inwestor ma jednego partnera i jedną odpowiedzialność.</p>
     </div>
     <div class="divs">{rows}</div>
   </div>
@@ -378,7 +378,7 @@ def build_index():
   <div class="wrap">
     <div class="sec-head split">
       <div style="display:grid;gap:22px"><span class="eyebrow">Soffel Investments · model flip</span><h2 class="h2 split-words">Od zakupu do zysku w pięciu etapach</h2></div>
-      <p class="lead rv">Inwestor wnosi kapitał, a Soffel Group prowadzi projekt od pierwszej analizy do sprzedaży. Na każdym etapie wiadomo, która spółka grupy odpowiada za wynik.</p>
+      <p class="lead rv">Inwestor wnosi kapitał, a Soffel Group prowadzi projekt od pierwszej analizy do sprzedaży. Na każdym etapie wiadomo, która marka grupy odpowiada za wynik.</p>
     </div>
     <div class="model"><span class="bar"></span>{steps_html}</div>
     <div class="loop-note rv">
@@ -451,7 +451,7 @@ def build_index():
     <div class="copy">
       <span class="eyebrow" style="--acc:#a76cff">Standard wykończenia</span>
       <h2 class="h2 split-words">Wartość budujemy <span class="gold-text">w detalach</span></h2>
-      <p class="lead rv">Renowację prowadzi własna spółka grupy — Soffel Renovations. Projektujemy wnętrza z myślą o kupujących segmentu premium: naturalne materiały, oświetlenie liniowe, zabudowy na wymiar i łazienki w standardzie hotelowym.</p>
+      <p class="lead rv">Renowację prowadzi własna marka grupy — Soffel Renovations. Projektujemy wnętrza z myślą o kupujących segmentu premium: naturalne materiały, oświetlenie liniowe, zabudowy na wymiar i łazienki w standardzie hotelowym.</p>
       <ul class="ticks rv" style="display:grid;gap:12px;color:var(--muted)">
         <li>Projekt wnętrza i kosztorys przed rozpoczęciem prac</li>
         <li>Własne ekipy wykończeniowe i stały nadzór</li>
@@ -487,7 +487,7 @@ def build_index():
   <div class="wrap">
     <div class="sec-head split">
       <div style="display:grid;gap:22px"><span class="eyebrow">Zespół</span><h2 class="h2 split-words">Ludzie stojący za <span class="gold-text">Soffel Group</span></h2></div>
-      <div class="rv" style="display:grid;gap:22px;justify-items:start"><p class="lead">Za każdą spółką grupy stoi osoba odpowiedzialna za swój obszar — od inwestycji, przez sprzedaż, po wykonawstwo i opiekę nad nieruchomościami.</p><a class="link-arrow" href="o-nas.html">Poznaj zespół {I["arrow"]}</a></div>
+      <div class="rv" style="display:grid;gap:22px;justify-items:start"><p class="lead">Każdą markę grupy prowadzi osoba odpowiedzialna za swój obszar — od inwestycji, przez sprzedaż, po wykonawstwo i opiekę nad nieruchomościami.</p><a class="link-arrow" href="o-nas.html">Poznaj zespół {I["arrow"]}</a></div>
     </div>
     <div class="team" data-stagger>
       {"".join(f'<div class="member" style="--c:{d["c"]}">{ph_img("Portret", "Soffel " + d["name"])}<span class="role">Soffel {d["name"]}</span><h3>{ph("Imię i nazwisko")}</h3><p>{ph("Stanowisko")}</p></div>' for d in DIVS)}
@@ -499,7 +499,7 @@ def build_index():
   <div class="wrap">
     <div class="sec-head center"><span class="eyebrow center">Pytania inwestorów</span><h2 class="h2 split-words">Najczęściej zadawane pytania</h2></div>
     {faq([
-      ("Co się dzieje, jeśli nieruchomość nie sprzeda się od razu?", "Do momentu sprzedaży nieruchomość jest wynajmowana krótkoterminowo. Najmem, obsługą gości i sprzątaniem zajmują się spółki grupy, a przychód z najmu jest uwzględniany w rozliczeniu projektu."),
+      ("Co się dzieje, jeśli nieruchomość nie sprzeda się od razu?", "Do momentu sprzedaży nieruchomość jest wynajmowana krótkoterminowo. Najmem, obsługą gości i sprzątaniem zajmują się marki grupy, a przychód z najmu jest uwzględniany w rozliczeniu projektu."),
       ("Czy muszę przyjeżdżać do Hiszpanii?", "Nie. Zakup, renowację, sprzedaż i najem prowadzi Soffel Group na miejscu. Inwestor otrzymuje raporty i dokumentację zdjęciową, a wizyta na miejscu jest możliwa, ale nie jest wymagana."),
       ("Ile trwa jeden projekt?", f"Czas projektu zależy od zakresu renowacji i sytuacji rynkowej. Typowy horyzont: {ph('do uzupełnienia, np. 6–12 miesięcy')}."),
       ("Jaki jest minimalny wkład?", f"Próg wejścia zależy od formy udziału. Dla inwestora indywidualnego: {ph()}, dla klubu współinwestorów: {ph()}."),
@@ -512,7 +512,7 @@ def build_index():
 {contact("inv")}
 '''
     page("index", "Soffel Group — inwestycje w nieruchomości na Costa del Sol | Marbella, Málaga",
-         "Soffel Group: flip nieruchomości na Costa del Sol dla polskich inwestorów. Zakup, renowacja, sprzedaż, najem i sprzątanie — cztery spółki, jeden proces.",
+         "Soffel Group: flip nieruchomości na Costa del Sol dla polskich inwestorów. Zakup, renowacja, sprzedaż, najem i sprzątanie — cztery obszary, jeden proces.",
          "group", body)
 
 # ================================================================ INWESTYCJE
@@ -541,7 +541,7 @@ def build_inv():
       <div class="fact"><strong>{ph("— %")}</strong><span>Średni zwrot z projektu</span></div>
       <div class="fact"><strong>{ph("— mies.")}</strong><span>Typowy czas trwania</span></div>
       <div class="fact"><strong>{ph("—")}</strong><span>Zrealizowane projekty</span></div>
-      <div class="fact"><strong><span data-count="4">4</span></strong><span>Spółki zaangażowane w projekt</span></div>
+      <div class="fact"><strong><span data-count="4">4</span></strong><span>Obszary zaangażowane w projekt</span></div>
     </div>
   </div>
 </section>
@@ -818,7 +818,7 @@ def build_about():
       <nav class="breadcrumbs fade-up" aria-label="Okruszki"><a href="index.html">Soffel Group</a><span>/</span><span>O nas</span></nav>
       <span class="eyebrow fade-up">People | Property | Better Living</span>
       <h1 class="display"><span class="ln"><span>Ludzie,</span></span><span class="ln"><span>nieruchomości</span></span><span class="ln"><span class="gold-text">i lepsze życie</span></span></h1>
-      <p class="lead fade-up d1">Soffel Group to grupa czterech spółek, które razem obejmują cały cykl życia nieruchomości na Costa del Sol. Łączymy polskie podejście do obsługi klienta z lokalną obecnością w Hiszpanii.</p>
+      <p class="lead fade-up d1">Soffel Group to cztery marki, które razem obejmują cały cykl życia nieruchomości na Costa del Sol. Łączymy polskie podejście do obsługi klienta z lokalną obecnością w Hiszpanii.</p>
       <div class="hero-cta fade-up d2"><a class="btn btn-primary" href="#zespol">Poznaj zespół {I["arrow"]}</a><a class="btn btn-ghost" href="#kontakt">Kontakt</a></div>
     </div>
     <div class="div-mark" aria-hidden="true"><span class="glow"></span><img src="img/s-green.webp" alt="" width="240" height="240"></div>
@@ -830,7 +830,7 @@ def build_about():
     <div class="copy">
       <span class="eyebrow">Nasza historia</span>
       <h2 class="h2 split-words">Z Polski na <span class="gold-text">Costa del Sol</span></h2>
-      <p class="lead rv">{ph("Historia firmy: kiedy powstała, kto ją założył, skąd pomysł na działalność w Hiszpanii i jak rozwinęła się do czterech spółek.")}</p>
+      <p class="lead rv">{ph("Historia firmy: kiedy powstała, kto ją założył, skąd pomysł na działalność w Hiszpanii i jak rozwinęła się do czterech obszarów działalności.")}</p>
       <p class="muted rv">Działamy na Costa del Sol, w okolicach Marbelli i Malagi. Zamiast zlecać kolejne etapy zewnętrznym firmom, zbudowaliśmy własne kompetencje w inwestycjach, pośrednictwie, renowacjach i sprzątaniu. Dzięki temu odpowiadamy za cały proces i za jego wynik.</p>
     </div>
     <div class="stack-media rv">
@@ -855,7 +855,7 @@ def build_about():
   <div class="wrap">
     <div class="sec-head split">
       <div style="display:grid;gap:22px"><span class="eyebrow">Zespół</span><h2 class="h2 split-words">Poznaj ludzi <span class="gold-text">Soffel Group</span></h2></div>
-      <p class="lead rv">Miejsce na zdjęcia i krótkie biogramy zespołu. Kolor podpisu wskazuje spółkę, w której pracuje dana osoba.</p>
+      <p class="lead rv">Miejsce na zdjęcia i krótkie biogramy zespołu. Kolor podpisu wskazuje obszar, w którym pracuje dana osoba.</p>
     </div>
     <div class="team" data-stagger>{team_html}</div>
   </div>
@@ -864,8 +864,8 @@ def build_about():
 <section class="paper sec">
   <div class="wrap">
     <div class="sec-head split">
-      <div style="display:grid;gap:22px"><span class="eyebrow">Struktura grupy</span><h2 class="h2 split-words">Cztery spółki, jedna odpowiedzialność</h2></div>
-      <p class="lead rv">Każda spółka ma własną specjalizację i własny zespół, a wszystkie pracują według wspólnych standardów.</p>
+      <div style="display:grid;gap:22px"><span class="eyebrow">Struktura grupy</span><h2 class="h2 split-words">Cztery marki, jedna odpowiedzialność</h2></div>
+      <p class="lead rv">Każda marka ma własną specjalizację i własny zespół, a wszystkie pracują według wspólnych standardów.</p>
     </div>
     <div class="cards c4" data-stagger>
       {"".join(f'<a class="card" href="{x["url"]}" style="--acc:{x["c"]}"><img src="img/{x["img"]}.webp" alt="" width="56" height="56" loading="lazy" style="width:56px;height:56px;object-fit:contain"><span class="k" style="color:{x["c"]}">{x["tag"]}</span><h3>Soffel {x["name"]}</h3><p>{x["desc"]}</p><span class="link-arrow" style="color:#0f1b16">Więcej {I["arrow"]}</span></a>' for x in DIVS)}
@@ -892,7 +892,7 @@ def build_about():
 {contact("inv")}
 '''
     page("o-nas", "O nas i zespół — Soffel Group | Nieruchomości na Costa del Sol",
-         "Poznaj Soffel Group: cztery spółki i zespół, który prowadzi inwestycje, sprzedaż, renowacje i sprzątanie nieruchomości w Marbelli i Maladze.",
+         "Poznaj Soffel Group: cztery marki i zespół, który prowadzi inwestycje, sprzedaż, renowacje i sprzątanie nieruchomości w Marbelli i Maladze.",
          "group", body, "about")
 
 if __name__ == "__main__":
