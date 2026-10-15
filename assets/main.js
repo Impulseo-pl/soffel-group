@@ -21,13 +21,27 @@
 
   /* menu mobilne */
   const burger = d.querySelector('.burger');
-  burger?.addEventListener('click', () => {
-    const open = body.classList.toggle('menu-open');
+  const menu = d.querySelector('.menu');
+  const setMenu = open => {
+    body.classList.toggle('menu-open', open);
     burger.setAttribute('aria-expanded', open);
+    menu.setAttribute('aria-hidden', !open);
+    d.querySelectorAll('main, footer').forEach(el => el.inert = open);
     header.classList.remove('hide');
+  };
+  burger?.addEventListener('click', () => setMenu(!body.classList.contains('menu-open')));
+  d.querySelectorAll('.menu a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+  addEventListener('keydown', e => { if (e.key === 'Escape') { setMenu(false); closeLb(); } });
+
+  /* menu: zdjęcie i znak S zmieniają się po najechaniu na spółkę */
+  const current = d.querySelector('.menu-main a[aria-current]')?.dataset.mi || 'group';
+  const showMi = key => d.querySelectorAll('.frame-c [data-mi]').forEach(el => el.classList.toggle('on', el.dataset.mi === key));
+  d.querySelectorAll('.menu-main a').forEach(a => {
+    a.addEventListener('pointerenter', () => showMi(a.dataset.mi));
+    a.addEventListener('focus', () => showMi(a.dataset.mi));
   });
-  d.querySelectorAll('.menu a').forEach(a => a.addEventListener('click', () => body.classList.remove('menu-open')));
-  addEventListener('keydown', e => { if (e.key === 'Escape') { body.classList.remove('menu-open'); closeLb(); } });
+  d.querySelector('.menu-main ol')?.addEventListener('pointerleave', () => showMi(current));
+  showMi(current);
 
   /* podział nagłówków na słowa */
   d.querySelectorAll('.split-words').forEach(el => {

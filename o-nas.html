@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/styles.css?v=e88ab7b4">
+<link rel="stylesheet" href="assets/styles.css?v=a3c34a5b">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "RealEstateAgent", "name": "Soffel Group", "slogan": "People | Property | Better Living", "url": "https://impulseo-pl.github.io/soffel-group/", "logo": "https://impulseo-pl.github.io/soffel-group/img/s-green.png", "areaServed": ["Costa del Sol", "Marbella", "Málaga"], "address": {"@type": "PostalAddress", "addressRegion": "Andalucía", "addressCountry": "ES"}, "subOrganization": [{"@type": "Organization", "name": "Soffel Investments"}, {"@type": "Organization", "name": "Soffel Properties"}, {"@type": "Organization", "name": "Soffel Renovations"}, {"@type": "Organization", "name": "Soffel Cleaning"}]}</script>
 </head>
 <body data-div="group">
@@ -36,18 +36,21 @@
       <img src="img/s-green.webp" alt="" width="44" height="44">
       <span class="brand-t"><b>SOFFEL</b><i>GROUP</i></span>
     </a>
-    <nav class="nav" aria-label="Główna nawigacja">
-      <a class="nl" href="inwestycje.html" style="--c:#d6b26a"><i class="dot"></i>Inwestycje</a><a class="nl" href="nieruchomosci.html" style="--c:#3fcf72"><i class="dot"></i>Nieruchomości</a><a class="nl" href="renowacje.html" style="--c:#a76cff"><i class="dot"></i>Renowacje</a><a class="nl" href="sprzatanie.html" style="--c:#3aa6ff"><i class="dot"></i>Sprzątanie</a><a class="nl on" href="o-nas.html">O nas</a>
-      <a class="btn btn-primary btn-sm" href="#kontakt">Umów rozmowę</a>
-      <button class="burger" type="button" aria-expanded="false" aria-controls="menu"><span class="lbl">Menu</span><span class="bars"></span></button>
-    </nav>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="menu">
+      <span class="lbl"><span class="t-open">Menu</span><span class="t-close">Zamknij</span></span><span class="bars"></span>
+    </button>
   </div>
 </header>
-<div class="menu" id="menu">
-  <ol><li><a href="inwestycje.html" style="--c:#d6b26a"><small>01</small>Inwestycje</a></li><li><a href="nieruchomosci.html" style="--c:#3fcf72"><small>02</small>Nieruchomości</a></li><li><a href="renowacje.html" style="--c:#a76cff"><small>03</small>Renowacje</a></li><li><a href="sprzatanie.html" style="--c:#3aa6ff"><small>04</small>Sprzątanie</a></li><li><a href="o-nas.html"><small>05</small>O nas</a></li><li><a href="#kontakt"><small>06</small>Kontakt</a></li></ol>
-  <div class="menu-foot">
-    <a class="btn btn-primary" href="#kontakt">Umów rozmowę <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
-    <span>Costa del Sol · Marbella · Málaga</span>
+<div class="menu" id="menu" aria-hidden="true">
+  <div class="menu-grid">
+    <nav class="menu-main" aria-label="Spółki Soffel Group"><ol><li><a href="inwestycje.html" style="--c:#d6b26a" data-mi="inv"><small>01</small><span>Investments</span></a></li><li><a href="nieruchomosci.html" style="--c:#3fcf72" data-mi="prop"><small>02</small><span>Properties</span></a></li><li><a href="renowacje.html" style="--c:#a76cff" data-mi="reno"><small>03</small><span>Renovations</span></a></li><li><a href="sprzatanie.html" style="--c:#3aa6ff" data-mi="clean"><small>04</small><span>Cleaning</span></a></li></ol></nav>
+    <div class="menu-side">
+      <div><p class="menu-h">Eksploruj</p><ul class="menu-links"><li><a href="index.html">Strona główna</a></li><li><a href="o-nas.html">O nas</a></li><li><a href="o-nas.html#zespol">Zespół</a></li><li><a href="inwestycje.html#model">Model inwestycyjny</a></li><li><a href="#kontakt">Kontakt</a></li></ul></div>
+      <div><p class="menu-h">Kontakt</p><ul class="menu-contact"><li><span class="ph">e-mail</span></li><li><span class="ph">telefon</span></li><li class="muted">Costa del Sol · Marbella · Málaga</li></ul></div>
+    </div>
+    <div class="menu-media" aria-hidden="true">
+      <figure class="frame-c"><img class="on" src="img/hero-villa.webp" alt="" data-mi="group" loading="lazy"><img src="img/hero-villa.webp" alt="" data-mi="inv" loading="lazy"><img src="img/kuchnia-salon.webp" alt="" data-mi="prop" loading="lazy"><img src="img/salon-1.webp" alt="" data-mi="reno" loading="lazy"><img src="img/lazienka-wanna.webp" alt="" data-mi="clean" loading="lazy"><span class="menu-mark"><img src="img/s-gold.webp" alt="" data-mi="inv" loading="lazy"><img src="img/s-green.webp" alt="" data-mi="prop" loading="lazy"><img src="img/s-purple.webp" alt="" data-mi="reno" loading="lazy"><img src="img/s-blue.webp" alt="" data-mi="clean" loading="lazy"></span></figure>
+    </div>
   </div>
 </div>
 <main>
@@ -211,6 +214,6 @@
   </div>
 </footer>
 <div class="lb" role="dialog" aria-modal="true" aria-label="Podgląd zdjęcia"><img alt=""><button class="x" type="button" aria-label="Zamknij"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button><button class="pv" type="button" aria-label="Poprzednie"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"/></svg></button><button class="nx" type="button" aria-label="Następne"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></button></div>
-<script src="assets/main.js?v=c63f2dec" defer></script>
+<script src="assets/main.js?v=38920b10" defer></script>
 </body>
 </html>

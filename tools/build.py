@@ -159,15 +159,18 @@ def head(title, desc, slug, theme_color="#04120d"):
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
 </head>'''
 
-DOT = '<i class="dot"></i>'
+MENU_IMG = {"inv": "hero-villa", "prop": "kuchnia-salon", "reno": "salon-1", "clean": "lazienka-wanna"}
+EXPLORE = [("index.html", "Strona główna"), ("o-nas.html", "O nas"), ("o-nas.html#zespol", "Zespół"),
+           ("inwestycje.html#model", "Model inwestycyjny"), ("#kontakt", "Kontakt")]
 
 def header(active):
-    def attrs(k):
-        return f' style="--c:{D[k]["c"]}"' if k in D else ""
-    links = "".join(
-        f'<a class="nl{" on" if k == active else ""}" href="{u}"{attrs(k)}>{DOT if k in D else ""}{t}</a>'
-        for k, t, u in NAV)
-    mlinks = "".join(f'<li><a href="{u}"{attrs(k)}><small>{i+1:02d}</small>{t}</a></li>' for i, (k, t, u) in enumerate(NAV))
+    big = "".join(
+        f'<li><a href="{d["url"]}" style="--c:{d["c"]}" data-mi="{d["key"]}"{" aria-current=page" if d["key"] == active else ""}>'
+        f'<small>{i+1:02d}</small><span>{d["name"]}</span></a></li>' for i, d in enumerate(DIVS))
+    explore = "".join(f'<li><a href="{u}">{t}</a></li>' for u, t in EXPLORE)
+    imgs = '<img class="on" src="img/hero-villa.webp" alt="" data-mi="group" loading="lazy">' + "".join(
+        f'<img src="img/{MENU_IMG[d["key"]]}.webp" alt="" data-mi="{d["key"]}" loading="lazy">' for d in DIVS)
+    marks = "".join(f'<img src="img/{d["img"]}.webp" alt="" data-mi="{d["key"]}" loading="lazy">' for d in DIVS)
     return f'''<div class="progress" aria-hidden="true"></div>
 <header class="site-header">
   <div class="wrap">
@@ -175,18 +178,21 @@ def header(active):
       <img src="img/s-green.webp" alt="" width="44" height="44">
       <span class="brand-t"><b>SOFFEL</b><i>GROUP</i></span>
     </a>
-    <nav class="nav" aria-label="Główna nawigacja">
-      {links}
-      <a class="btn btn-primary btn-sm" href="#kontakt">Umów rozmowę</a>
-      <button class="burger" type="button" aria-expanded="false" aria-controls="menu"><span class="lbl">Menu</span><span class="bars"></span></button>
-    </nav>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="menu">
+      <span class="lbl"><span class="t-open">Menu</span><span class="t-close">Zamknij</span></span><span class="bars"></span>
+    </button>
   </div>
 </header>
-<div class="menu" id="menu">
-  <ol>{mlinks}<li><a href="#kontakt"><small>06</small>Kontakt</a></li></ol>
-  <div class="menu-foot">
-    <a class="btn btn-primary" href="#kontakt">Umów rozmowę {I["arrow"]}</a>
-    <span>Costa del Sol · Marbella · Málaga</span>
+<div class="menu" id="menu" aria-hidden="true">
+  <div class="menu-grid">
+    <nav class="menu-main" aria-label="Spółki Soffel Group"><ol>{big}</ol></nav>
+    <div class="menu-side">
+      <div><p class="menu-h">Eksploruj</p><ul class="menu-links">{explore}</ul></div>
+      <div><p class="menu-h">Kontakt</p><ul class="menu-contact"><li>{ph("e-mail")}</li><li>{ph("telefon")}</li><li class="muted">Costa del Sol · Marbella · Málaga</li></ul></div>
+    </div>
+    <div class="menu-media" aria-hidden="true">
+      <figure class="frame-c">{imgs}<span class="menu-mark">{marks}</span></figure>
+    </div>
   </div>
 </div>'''
 
