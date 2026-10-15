@@ -4,6 +4,7 @@
    ========================================================= */
 
 :root {
+  --logo-glow: #2fb35a;
   --font: "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
 
   --ink: #04120d;
@@ -49,18 +50,22 @@
 }
 
 body[data-div="inv"] {
+  --logo-glow: var(--acc);
   --acc: #d6b26a; --acc-2: #f5e2b0; --acc-grad: var(--gold-grad); --acc-ink: #1a1408;
   --rib-1: #b88b3c; --rib-2: #3a2a10; --deep: #070806; --deep-2: #17140c;
 }
 body[data-div="prop"] {
+  --logo-glow: var(--acc);
   --acc: #3fcf72; --acc-2: #a6f0be; --acc-grad: linear-gradient(120deg, #b9f5cc 0%, #3fcf72 45%, #17803f 100%); --acc-ink: #03170b;
   --rib-1: #23a356; --rib-2: #08361d; --deep: #03110a; --deep-2: #0a2717;
 }
 body[data-div="reno"] {
+  --logo-glow: var(--acc);
   --acc: #a76cff; --acc-2: #dcc6ff; --acc-grad: linear-gradient(120deg, #e3d1ff 0%, #a76cff 45%, #5d23b8 100%); --acc-ink: #13072a;
   --rib-1: #7b3fe0; --rib-2: #2a1052; --deep: #0b0714; --deep-2: #1a1029;
 }
 body[data-div="clean"] {
+  --logo-glow: var(--acc);
   --acc: #3aa6ff; --acc-2: #bfe2ff; --acc-grad: linear-gradient(120deg, #cdeaff 0%, #3aa6ff 45%, #1460c4 100%); --acc-ink: #031225;
   --rib-1: #1f7fe0; --rib-2: #0a2c55; --deep: #030c17; --deep-2: #091d33;
 }
@@ -188,7 +193,7 @@ ul, ol { padding: 0; list-style: none; }
 .site-header.hide { transform: translateY(-100%); }
 
 .brand { display: inline-flex; align-items: center; gap: 12px; flex-shrink: 0; }
-.brand img { width: 44px; height: 44px; object-fit: contain; filter: drop-shadow(0 4px 14px rgba(47,179,90,.35)); transition: transform .8s var(--ease); }
+.brand img { width: 44px; height: 44px; object-fit: contain; filter: drop-shadow(0 4px 14px color-mix(in srgb, var(--logo-glow, #2fb35a) 40%, transparent)); transition: transform .8s var(--ease); }
 .brand:hover img { transform: rotate(-8deg) scale(1.05); }
 .brand-t { display: grid; line-height: 1; }
 .brand-t b { font-weight: 600; font-size: 19px; letter-spacing: .2em; }

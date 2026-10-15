@@ -163,7 +163,8 @@ MENU_IMG = {"inv": "hero-villa", "prop": "kuchnia-salon", "reno": "salon-1", "cl
 EXPLORE = [("index.html", "Strona główna"), ("o-nas.html", "O nas"), ("o-nas.html#zespol", "Zespół"),
            ("inwestycje.html#model", "Model inwestycyjny"), ("#kontakt", "Kontakt")]
 
-def header(active):
+def header(active, div="group"):
+    logo = D[div]["img"] if div in D else "s-green"
     big = "".join(
         f'<li><a href="{d["url"]}" style="--c:{d["c"]}" data-mi="{d["key"]}"{" aria-current=page" if d["key"] == active else ""}>'
         f'<small>{i+1:02d}</small><span>{d["name"]}</span></a></li>' for i, d in enumerate(DIVS))
@@ -175,7 +176,7 @@ def header(active):
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="index.html" aria-label="Soffel Group — strona główna">
-      <img src="img/s-green.webp" alt="" width="44" height="44">
+      <img src="img/{logo}.webp" alt="" width="44" height="44">
       <span class="brand-t"><b>SOFFEL</b><i>GROUP</i></span>
     </a>
     <button class="burger" type="button" aria-expanded="false" aria-controls="menu">
@@ -280,7 +281,7 @@ def faq(items, dark=False):
     return f'<div class="{"dark-faq" if dark else ""}"><div class="faq">{det}</div></div>'
 
 def page(slug, title, desc, div, body, active=None):
-    html = head(title, desc, slug) + f'\n<body data-div="{div}">\n{svg_defs()}\n{header(active)}\n<main>\n{body}\n</main>\n{footer()}'
+    html = head(title, desc, slug) + f'\n<body data-div="{div}">\n{svg_defs()}\n{header(active, div)}\n<main>\n{body}\n</main>\n{footer()}'
     (ROOT / f"{slug}.html").write_text(html, encoding="utf-8")
     print("✓", slug)
 
